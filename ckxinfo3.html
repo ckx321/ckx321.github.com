@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>全屏上下</title>
+    <link rel="stylesheet" type="text/css" href="css/ckx.css">
+</head>
+<body>
+
+<!--代码部分begin-->
+<ul id="menu">
+    <li data-menuanchor="page1" class="active"><a href="#page1">1</a></li>
+    <li data-menuanchor="page2"><a href="#page2">2</a></li>
+    <li data-menuanchor="page3"><a href="#page3">3</a></li>
+    <li data-menuanchor="page4"><a href="#page4">4</a></li>
+    <li data-menuanchor="page5"><a href="#page5">5</a></li>
+    <li data-menuanchor="page6"><a href="#page6">6</a></li>
+</ul>
+
+<div class="section">
+    <div class="color_white f20 text_center">开头</div>
+</div>
+<div class="section">
+    <div class="color_white f20 text_center">简介</div>
+</div>
+<div class="section">
+    <div class="color_white f20 text_center">技能</div>
+</div>
+<div class="section">
+    <div class="color_white f20 text_center">教育</div>
+</div>
+<div class="section">
+    <div class="color_white f20 text_center">工作</div>
+</div>
+<div class="section">
+    <div class="color_white f20 text_center">期望</div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui-1.10.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    $(function(){
+        $.fn.fullpage({
+            slidesColor: ['#009999', '#CC6600', '#CCCC00', '#66CC66', '#CC3366', '#e3393c'],
+            anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+            menu: '#menu'
+        });
+    });
+</script>
+<!--代码部分end-->
+
+</body>
+</html>
