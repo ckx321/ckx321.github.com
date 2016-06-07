@@ -1,8 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-		<title>��ZeroClipboardʵ����վ���ݸ���ճ��JS��Ч</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>用ZeroClipboard实现网站内容复制粘贴JS特效</title>
 		
 		<script type="text/javascript" src="js/ZeroClipboard.js"></script>
 		<script language="JavaScript">
@@ -19,15 +19,15 @@
 					clip.setText($('fe_text').value);
 				});
 				clip.addEventListener('complete', function(client, text) {
-					alert("���Ƴɹ���������ճ�����͸�QQ�ϵĺ��ѻ�QQȺ��^_^");
+					alert("复制成功，您可以粘贴发送给QQ上的好友或QQ群了^_^");
 				});
 				clip.glue('clip_button', 'clip_container');
 			}
 		</script>
 	</head>
 
-	<body onload="init()">
-		<div style="width:560px; height:auto; margin:150px auto;">���Ƹ�����QQ���ѻ�QQȺ��<br><textarea style="width: 550px; height:80px;" name="urlName" id="fe_text">JquerySchool�ṩ��һ����������Ϊ��ͬ������һ��Ŀ�����������ѧϰ�����������ȡ��֮��������֮�̣���ͬ��������վƽ̨����ѧϰJquery����������ȥ��һ��Ŷ��http://www.jq-school.com</textarea><br><span id="clip_container"><button id="clip_button" style="width:128px;height:32px;line-height:26px;font:16px arial;" class="">������Ʒ���</button><div style="position: absolute; left: 680px; top: 254px; width: 128px; height: 32px; z-index: 99;"><embed id="ZeroClipboardMovie_1" src="ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="128" height="32" name="ZeroClipboardMovie_1" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=1&amp;width=128&amp;height=32" wmode="transparent"></div></span></div>
+	<body onLoad="init()">
+		<div style="width:560px; height:auto; margin:150px auto;">复制给您的QQ好友或QQ群：<br><textarea style="width: 550px; height:80px;" name="urlName" id="fe_text">JquerySchool提供了一个让网友们为共同进步这一个目标出发，互相学习，互相帮助，取人之长，补已之短，共同进步的网站平台，想学习Jquery技术的朋友去看一下哦：http://www.jq-school.com</textarea><br><span id="clip_container"><button id="clip_button" style="width:128px;height:32px;line-height:26px;font:16px arial;" class="">点击复制分享</button><div style="position: absolute; left: 680px; top: 254px; width: 128px; height: 32px; z-index: 99;"><embed id="ZeroClipboardMovie_1" src="ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="128" height="32" name="ZeroClipboardMovie_1" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=1&amp;width=128&amp;height=32" wmode="transparent"></div></span></div>
 
 	</body>
 
