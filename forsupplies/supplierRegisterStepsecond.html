@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="登录">
+    	<meta name="Description" content="登录">
+		<title>注册—提交资料</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/header_footer.css" />
+		<link rel="stylesheet" type="text/css" href="css/supplierloginregister.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+		<!--<script type="text/javascript" src="js/angular.min.js"></script>-->
+		<script type="text/javascript" src="js/supplierLoginAndRegister.js"></script>
+		<script type="text/javascript" src="js/jquery.cityselect.js"></script>
+		
+		
+		<script type="text/javascript">
+			$(function(){
+				$("#city_4").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				$("#city_5").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				$("#city_6").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				$("#city_7").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				$("#city_8").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				$("#city_9").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				$("#city_10").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				$("#city_11").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				$("#city_12").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				$("#city_13").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				$("#city_14").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+
+				}); 
+				
+			});
+
+		</script>
+
+
+
+			
+	</head>
+	<body ng-app="">
+
+
+		
+		<div class="supplier_wrap">
+		
+			<!--header-->
+			<!--<ng-include src="'include/header.html'" ></ng-include>-->
+			
+			<div id="header" class="otherpage_hd">
+				<div class="hd_cont">
+					<a class="logo_out" href="index.html"><img class="logo" src="images/logo_other.png" alt="logo"></a>
+				</div>
+			</div>
+			
+			<div class="supplier_main">
+					<div class="supplier_register3">
+						<h2>企业相关信息</h2>
+						
+						<!--企业基本信息-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong>企业基本信息</strong>
+							</h3>
+							<div class="supplier_reg_info">
+								<p>填写注意事项：</p>
+								<ul>
+									<li>营业执照扫描件需加盖公章扫描上传，并标识为带路者供应商资审入库用。</li>
+								</ul>
+							</div>
+							<table class="supplier_reg_tab4col">
+								<tr>
+									<td>公司名称</td>
+									<td colspan="3">
+										<input type="text" data-noempty="true">
+									</td>
+								</tr>
+								<tr>
+									<td class="minht">所在地</td>
+									<td colspan="3">
+										<div class="city_select_out" id="city_4">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+
+									</td>
+								</tr>
+								<tr>
+									<td class="minht">企业性质</td>
+									<td>
+										<select class="sel_100_b">
+											<option value="0">--请选择--</option>
+											<option value="有限责任公司">有限责任公司</option>
+											<option>股份有限公司</option>
+											<option>国有独资公司</option>
+											<option>个人独资企业</option>
+											<option>合伙企业</option>
+											<option>个体工商户</option>
+											<option>外商独资企业</option>
+											<option>中外合作企业</option>
+											<option>中外合资企业</option>
+											<option>私营企业</option>
+											<option>全民所有制企业</option>
+											<option>集体所有制企业</option>
+										</select>
+									</td>
+									<td>行业分类</td>
+									<td>
+										<select class="sel_100_b">
+											<option>--请选择--</option>
+											<option>智能解决方案</option>
+											<option>生活家电</option>
+											<option>生活家具/办公家具</option>
+											<option>室内装饰</option>
+											<option>软装系统</option>
+											<option>卫浴洁具</option>
+											<option>综合机电</option>
+											<option>基础材料</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>企业规模</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td>社会信用代码</td>
+									<td><input type="text" data-noempty="true"></td>
+								</tr>
+								<tr>
+									<td>法人代表</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td>企业成立日期</td>
+									<td><input class="build_date" type="date"></td>
+								</tr>
+								<tr>
+									<td>注册资本</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td>实收资本</td>
+									<td><input type="text" data-noempty="true"></td>
+								</tr>
+								<tr>
+									<td class="minht">营业期限</td>
+									<td class="data_ip_out" colspan="3">
+										<input type="date"> 至 <input type="date">
+									</td>
+								</tr>
+								<tr>
+									<td>营业执照扫描件</td>
+									<td colspan="3">
+										
+										<div class="uploadimg_div">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_businesslicense" type="file" value="上传" onchange="showPreview(this,'upload_businesslicense_show')" data-upload="true"  data-uploadcode="0" >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_businesslicense_show"></div>
+										
+									</td>
+								</tr>
+								<tr>
+									<td>备注</td>
+									<td colspan="3"><input type="text"></td>
+								</tr>
+							</table>
+						</div>
+						
+						<!--企业联系信息-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong>企业联系信息</strong>
+							</h3>
+							<div class="supplier_reg_info">
+								<p>填写注意事项：</p>
+								<ul>
+									<li>专用手机号将作为贵公司对接业务人员专用账号，参与带路者投标业务。</li>
+								</ul>
+							</div>
+							<table class="supplier_reg_tab4col">
+								<tr>
+									<td>授权委托人姓名</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td>授权委托人手机号</td>
+									<td><input type="text" data-noempty="true"></td>
+								</tr>
+								<tr>
+									<td>企业电话</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td>传真电话</td>
+									<td><input type="text" data-noempty="true"></td>
+								</tr>
+								<tr>
+									<td>办公地址</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td>邮编</td>
+									<td><input type="text" data-noempty="true"></td>
+								</tr>
+								<tr>
+									<td>注册地址</td>
+									<td colspan="3"><input type="text" data-noempty="true"></td>
+								</tr>
+								<tr>
+									<td>法人授权委托人</td>
+									<td colspan="3">
+										
+										<a class="download_templet" href="powerOfAttorney.zip">模板下载</a>
+										
+										<div class="uploadimg_div">
+											<span>盖章并上传扫描件</span>
+											<input class="uploadimg_btn"  id="upload_corporation_authorization" type="file" value="盖章并上传扫描件" onchange="showPreview(this,'upload_corporation_authorization_show')"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_corporation_authorization_show"></div>
+										
+									</td>
+								</tr>
+							</table>
+						</div>
+						
+						
+						<!--企业财务信息-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong>企业财务信息</strong>
+							</h3>
+							<div class="supplier_reg_info">
+								<p>填写注意事项：</p>
+								<ul>
+									<li>对于以下财务信息，若当年无财务数据，请填写0</li>
+								</ul>
+							</div>
+							<table class="supplier_reg_tab4col supplier_reg_tab4col5">
+								<tr>
+									<th class="wb25 bg_blue" rowspan="4">近三年营业额（元）</th>
+									<th class="wb15 bg_blue minht ta_c">年份</th>
+									<th class="wb15 bg_blue minht ta_c">国内</th>
+									<th class="wb15 bg_blue minht ta_c">国外</th>
+									<th class="wb30 bg_blue minht ta_c">附件（财务审计报告）</th>
+								</tr>
+								<!--<tr>
+									<td class="wb25" rowspan="4">近三年营业额（元）</td>
+									<td class="wb15 bg_blue minht ta_c">年份</td>
+									<td class="wb15 bg_blue minht ta_c">国内</td>
+									<td class="wb15 bg_blue minht ta_c">国外</td>
+									<td class="wb30 bg_blue minht ta_c">附件</td>
+								</tr>-->
+								<tr>
+									<td>2016年</td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td>
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_financial_audit_report1" type="file" value="上传" onchange="showPreview(this,'upload_financial_audit_report1_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_financial_audit_report1_show"></div>
+										
+									</td>
+								</tr>
+								<tr>
+									<td>2015年</td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td>
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_financial_audit_report2" type="file" value="上传" onchange="showPreview(this,'upload_financial_audit_report2_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_financial_audit_report2_show"></div>
+										
+									</td>
+								</tr>
+								<tr>
+									<td>2014年</td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td>
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_financial_audit_report3" type="file" value="上传" onchange="showPreview(this,'upload_financial_audit_report3_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_financial_audit_report3_show"></div>
+									</td>
+								</tr>
+								<!--<tr>
+									<td>附件（财务审计报告）</td>
+									<td colspan="3">
+										<div class="uploadimg_div">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_financial_audit_report" type="file" value="上传" onchange="showPreview(this,'upload_financial_audit_report_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_financial_audit_report_show"></div>
+										
+									</td>
+								</tr>-->
+								<tr>
+									<td>备注</td>
+									<td colspan="4"><input type="text"></td>
+								</tr>
+							</table>
+						</div>
+						
+						
+						<!--近三年每年的资产负债情况-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong class="morewd_strong">近三年每年的资产负债情况</strong>
+							</h3>
+							<div class="supplier_reg_info">
+								<p>填写注意事项：</p>
+								<ul>
+									<li>新成立企业当年验资报告或银行出具的公司资信证明复印件加盖公章。</li>
+								</ul>
+							</div>
+							<table class="supplier_reg_tab4col supplier_reg_tab4col5">
+								<tr>
+									<th class="wb25 bg_blue"></th>
+									<th class="wb15 bg_blue  ta_c"></th>
+									<th class="wb15 bg_blue  ta_c"></th>
+									<th class="wb15 bg_blue  ta_c"></th>
+									<th class="wb30 bg_blue  ta_c"></th>
+								</tr>
+								<tr>
+									<td class="ta_c" rowspan="2">财务状况<br>（单位：元）</td>
+									<td class="bg_blue minht ta_c" colspan="4">近三年</td>
+								</tr>
+								<tr>
+									<td class="bg_white minht ta_c">2014年</td>
+									<td class="bg_white minht ta_c">2015年</td>
+									<td class="bg_white minht ta_c">2016年</td>
+									<td class="bg_white minht ta_c">附件</td>
+								</tr>
+								<tr>
+									<td>总资产</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_finance_total_assets" type="file" value="上传" onchange="showPreview(this,'upload_finance_total_assets_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_finance_total_assets_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>流动资产</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_finance_current_assets" type="file" value="上传" onchange="showPreview(this,'upload_finance_current_assets_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_finance_current_assets_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>非流动资产</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_finance_non_current_assets" type="file" value="上传" onchange="showPreview(this,'upload_finance_non_current_assets_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_finance_non_current_assets_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>总负债</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_finance_total_liabilities" type="file" value="上传" onchange="showPreview(this,'upload_finance_total_liabilities_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_finance_total_liabilities_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>流动负债</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_finance_current_liabilities" type="file" value="上传" onchange="showPreview(this,'upload_finance_current_liabilities_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_finance_current_liabilities_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>非流动负债</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_finance_non_current_liabilities" type="file" value="上传" onchange="showPreview(this,'upload_finance_non_current_liabilities_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_finance_non_current_liabilities_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>税前利润</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_finance_pre_tax_profit" type="file" value="上传" onchange="showPreview(this,'upload_finance_pre_tax_profit_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_finance_pre_tax_profit_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>税后利润</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_finance_after_tax_profit" type="file" value="上传" onchange="showPreview(this,'upload_finance_after_tax_profit_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_finance_after_tax_profit_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>固定资产</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_financial_fixed_assets" type="file" value="上传" onchange="showPreview(this,'upload_financial_fixed_assets_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_financial_fixed_assets_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>净资产总值</td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white"><input type="text" data-noempty="true"></td>
+									<td><input type="text" data-noempty="true"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_financial_net_asset_value" type="file" value="上传" onchange="showPreview(this,'upload_financial_net_asset_value_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_financial_net_asset_value_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>备注</td>
+									<td colspan="4">
+										<p class="info_newcompany">新成立企业当年验资报告或银行出具的公司资信证明复印件加盖公章。</p>
+										<div class="uploadimg_div">
+											<span>上传附件</span>
+											<input class="uploadimg_btn"  id="upload_newcompany" type="file" value="上传附件" onchange="showPreview(this,'upload_newcompany_show')"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_newcompany_show"></div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						
+						
+						<!--企业廉洁信息-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong>企业廉洁信息</strong>
+							</h3>
+							
+							<table class="supplier_reg_tab4col supplier_reg_tab4col2">
+								<tr>
+									<td class="supplier_w40td">当地检查机关出具无相关犯罪证明</td>
+									<td class="supplier_w60td">
+										<div class="uploadimg_div">
+											<span>上传扫描件</span>
+											<input class="uploadimg_btn"  id="upload_no_criminal_proof" type="file" value="上传扫描件" onchange="showPreview(this,'upload_no_criminal_proof_show')"  data-upload="true"  data-uploadcode="0"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_no_criminal_proof_show"></div>
+										
+									</td>
+								</tr>
+							</table>
+						</div>
+						
+						
+						<!--企业业绩证明-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong>企业业绩证明</strong>
+							</h3>
+							<div class="supplier_reg_info">
+								<p>填写注意事项：</p>
+								<ul>
+									<li>1：附件需是合同原件扫描件，合同名称与相关附件应一一对应。</li>
+									<li>2：合同金额大于500万元。</li>
+								</ul>
+							</div>
+							<table class="supplier_reg_tab4col supplier_reg_tab4col4">
+								<tr>
+									<td colspan="3" class="ta_c minht">海外合同</td>
+								</tr>
+								<tr>
+									<td class="ta_c">合同名称</td>
+									<td class="bg_blue ta_c">说明</td>
+									<td class="minht ta_c">上传扫描件</td>
+								</tr>
+								<tr class="ui_upload_after_append">
+									<td class="bg_white"><input id="overseas_contract1" type="text" placeholder="请输入合同名称"></td>
+									<td><input id="overseas_contract1_info" type="text"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_overseas_contract1" type="file" value="上传扫描件" onchange="showPreview(this,'upload_overseas_contract1_show')"  >
+										</div>
+										<div class="uploadimgshow_out" id="upload_overseas_contract1_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" class="supplier_morebtn_out">
+										<span class="morebtn_info">可上传多个文件</span>
+										<span class="more_btn" id="upload_more_btn1">添加更多<em>+</em></span>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" class="ta_c minht">国内合同</td>
+								</tr>
+								<tr>
+									<td class="ta_c">合同名称</td>
+									<td class="bg_blue ta_c">说明</td>
+									<td class="minht ta_c">上传扫描件</td>
+								</tr>
+								<tr>
+									<td class="bg_white"><input id="domestic_contract1" type="text" placeholder="请输入合同名称"></td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_domestic_contract11" type="file" value="上传扫描件" onchange="showPreview(this,'upload_domestic_contract11_show')"  >
+										</div>
+										<div class="uploadimgshow_out" id="upload_domestic_contract11_show"></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="bg_white"><input id="domestic_contract2" type="text" placeholder="请输入合同名称"></td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_domestic_contract2" type="file" value="上传扫描件" onchange="showPreview(this,'upload_domestic_contract2_show')"  >
+										</div>
+										<div class="uploadimgshow_out" id="upload_domestic_contract2_show"></div>
+									</td>
+								</tr>
+								
+							</table>
+						</div>
+						
+						
+						
+						<!--开户情况-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong>开户情况</strong>
+							</h3>
+							<table class="supplier_reg_tab4col">
+								<tr>
+									<td rowspan="5">开户银行</td>
+									<td class="bg_blue ta_r">企业账户</td>
+									<td class="bg_white" colspan="2"><input type="text" data-noempty="true"></td>
+								</tr>
+								<tr>
+									<td>账户名称</td>
+									<td colspan="2"><input type="text" data-noempty="true"></td>
+								</tr>
+								<tr>
+									<td>开户银行</td>
+									<td colspan="2"><input type="text" data-noempty="true"></td>
+								</tr>
+								<tr>
+									<td>财务负责人</td>
+									<td colspan="2"><input type="text" data-noempty="true"></td>
+								</tr>
+								<tr>
+									<td>财务电话</td>
+									<td colspan="2"><input type="text" data-noempty="true"></td>
+								</tr>
+								
+								<!--<tr>
+									<td>传真</td>
+									<td colspan="2"><input type="text" data-noempty="true"></td>
+								</tr>-->
+								<tr class="vis_hidden">
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								
+							</table>
+						</div>
+						
+						
+						<!--相关认证信息-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong>相关认证信息</strong>
+							</h3>
+							<table class="supplier_reg_tab4col supplier_reg_tab4col3">
+								<tr>
+									<td>&nbsp;</td>
+									<td class="supplier_td1 bg_blue">勾选</td>
+									<td class="supplier_td2 ta_c minht">上传证明资料</td>
+								</tr>
+								
+								<tr>
+									<td>质量管理体系认证</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_iso9001" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_iso9001_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_iso9001_show"></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>环境管理体系认证</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_iso14001" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_iso14001_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_iso14001_show"></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>资源节约认证</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_resource_saving" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_resource_saving_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_resource_saving_show"></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>环保认证</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_iso14000" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_iso14000_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_iso14000_show"></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>CCC认证</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_ccc" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_ccc_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_ccc_show"></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>AAA信用等级认证</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_aaa" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_aaa_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_aaa_show"></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>CE认证</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_ce" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_ce_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_ce_show"></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>欧标检测报告</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_estr" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_estr_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_estr_show"></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>ROHS认证</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_rohs" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_rohs_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_rohs_show"></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>FSC认证</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_fsc" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_fsc_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_fsc_show"></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>其他相关国际认证</td>
+									<td class="supplier_td1 ui_checkbox_out1"><label class="dis_label"><input type="checkbox" name="supplier_certification"></label></td>
+									<td class="supplier_td2 bg_white ta_l ui_upload_or_no no_upload_css">
+										<div class="uploadimg_div">
+											<span>上传资料</span>
+											<input class="uploadimg_btn ui_uploadimg_btn"  id="upload_other_certification" type="file" disabled="disabled" value="上传资料" onchange="showPreview(this,'upload_other_certification_show')"  >
+										</div>
+										<div class="uploadimgshow_out ui_uploadimgshow_out" id="upload_other_certification_show"></div>
+									</td>
+								</tr>
+								
+								
+								
+								
+							</table>
+						</div>
+						
+						
+						<!--发货地址-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong>发货地址</strong>
+							</h3>
+							<table class="supplier_reg_tab4col supplier_reg_tab4col4">
+								<tr>
+									<th class="wb40"></th>
+									<th class="wb40"></th>
+									<th class="wb20"></th>
+								</tr>
+								<tr>
+									<td class="ta_c">发货地址</td>
+									<td class="bg_blue ta_c">详细地址</td>
+									<td class="minht ta_c">地址邮编</td>
+								</tr>
+								<tr class="ui_address_after_append">
+									<td class="bg_white ta_l">
+										<div class="city_select_out city_select_out2" id="city_5">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+									</td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<input type="text">
+									</td>
+								</tr>
+								<tr class="ui_address_after_append address_2 c_hidden">
+									<td class="bg_white ta_l">
+										<div class="city_select_out city_select_out2" id="city_6">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+									</td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<input type="text">
+									</td>
+								</tr>
+								<tr class="ui_address_after_append address_3 c_hidden">
+									<td class="bg_white ta_l">
+										<div class="city_select_out city_select_out2" id="city_7">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+									</td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<input type="text">
+									</td>
+								</tr>
+								<tr class="ui_address_after_append address_4 c_hidden">
+									<td class="bg_white ta_l">
+										<div class="city_select_out city_select_out2" id="city_8">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+									</td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<input type="text">
+									</td>
+								</tr>
+								<tr class="ui_address_after_append address_5 c_hidden">
+									<td class="bg_white ta_l">
+										<div class="city_select_out city_select_out2" id="city_9">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+									</td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<input type="text">
+									</td>
+								</tr>
+								<tr class="ui_address_after_append address_6 c_hidden">
+									<td class="bg_white ta_l">
+										<div class="city_select_out city_select_out2" id="city_10">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+									</td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<input type="text">
+									</td>
+								</tr>
+								<tr class="ui_address_after_append address_7 c_hidden">
+									<td class="bg_white ta_l">
+										<div class="city_select_out city_select_out2" id="city_11">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+									</td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<input type="text">
+									</td>
+								</tr>
+								<tr class="ui_address_after_append address_8 c_hidden">
+									<td class="bg_white ta_l">
+										<div class="city_select_out city_select_out2" id="city_12">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+									</td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<input type="text">
+									</td>
+								</tr>
+								<tr class="ui_address_after_append address_9 c_hidden">
+									<td class="bg_white ta_l">
+										<div class="city_select_out city_select_out2" id="city_13">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+									</td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<input type="text">
+									</td>
+								</tr>
+								<tr class="ui_address_after_append address_10 c_hidden">
+									<td class="bg_white ta_l">
+										<div class="city_select_out city_select_out2" id="city_14">
+											<select class="prov"></select> 
+											<select class="city" disabled="disabled"></select>
+											<select class="dist" disabled="disabled"></select>
+										</div>
+									</td>
+									<td><input type="text"></td>
+									<td class="bg_white ta_l">
+										<input type="text">
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" class="supplier_morebtn_out">
+										<span class="morebtn_info">可上传多个文件</span>
+										<span class="more_btn" id="address_more_btn1">添加更多<em>+</em></span>
+									</td>
+								</tr>
+								
+								
+							</table>
+						</div>
+						
+						
+					 <!--自查表格-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong>自查表格</strong>
+							</h3>
+							<div class="supplier_reg_info">
+								<p>填写注意事项：</p>
+								<ul>
+									<li>下载模板并填写真实信息后，盖章并上传扫描件。</li>
+								</ul>
+							</div>
+							<table class="supplier_reg_tab4col">
+								
+								<tr>
+									<td>带路者供应商自查表格</td>
+									<td colspan="3">
+										
+										<a class="download_templet" href="selfExamination.zip">模板下载</a>
+										
+										<div class="uploadimg_div">
+											<span>盖章并上传扫描件</span>
+											<input class="uploadimg_btn"  id="upload_self_examination" type="file" value="盖章并上传扫描件" onchange="showPreview(this,'upload_self_examination_show')"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_self_examination_show"></div>
+										
+									</td>
+								</tr>
+								<tr class="ht0">
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+						
+						
+						
+						<div class="register_btn_div">
+							<p class="registerbtn_out">
+								<!--<input class="register_btn" id="register_second_btn" type="button" value="提交">-->
+								<a class="register_btn" style="width: 90px;" href="supplierRegisterSelectProduct.html">下一步</a>
+							      
+							</p>
+						</div>
+						
+						
+						
+
+					</div>
+				
+				
+			</div>
+	
+			
+			
+			
+			
+			
+			<!--footer-->
+			<!--<ng-include src="'include/footer.html'"></ng-include>-->
+			
+			<div class="footer" id="page_footer">
+				<p class="code_a"><img src="images/footer_dode3.png" alt="demo"></p>
+				<p class="code_copy">Silkwalks <span>©</span> 2016 Legal Contact Careers Locations</p>
+			</div>
+		
+		</div>
+		
+		
+		
+
+	</body>
+</html>
+
+
