@@ -49,7 +49,7 @@ function showPreview(source,showid) {
         	var imgobj = new Image();
         	imgobj.src = e.target.result; 
         	
-        	alert(imgobj.src);
+        	//alert(imgobj.src);
         	
         	if(imgobj.src.indexOf("png") > 0|| imgobj.src.indexOf("jpg") > 0)   
 				{   
