@@ -48,7 +48,18 @@ function showPreview(source,showid) {
         fr.onloadend = function(e) {  
         	var imgobj = new Image();
         	imgobj.src = e.target.result; 
-        	$("#"+showid).empty().append(imgobj);
+        	
+        	alert(imgobj.src);
+        	
+        	if(imgobj.src.indexOf("png") > 0|| imgobj.src.indexOf("jpg") > 0)   
+				{   
+				    $("#"+showid).empty().append(imgobj);   
+				}else{
+					$("#"+showid).empty().append('<img src="images/yasuo_code.jpg">'); 
+				}
+        	
+        	
+        	
             
         }; 
 //      alert(file);

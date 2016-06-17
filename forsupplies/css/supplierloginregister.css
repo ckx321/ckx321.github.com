@@ -203,7 +203,7 @@ src: url('MyriadPro-Regular.otf');
 .supplier_reg_tab4col tr td:nth-child(2n+1){
 	/*width:20%;*/
 	text-align: right;
-	background-color: #33ccff;
+	background-color: #38a8e8;
 }
 /*.supplier_reg_tab4col2 tr td{
 	width:26.66%;
@@ -231,7 +231,7 @@ src: url('MyriadPro-Regular.otf');
 
 .supplier_reg_tab4col tr td.bg_blue,
 .supplier_reg_tab4col tr th.bg_blue
-{background-color: #33ccff;}
+{background-color: #38a8e8;}
 .supplier_reg_tab4col tr td.bg_white,
 .supplier_reg_tab4col tr th.bg_white
 {background-color: #ffffff;}
