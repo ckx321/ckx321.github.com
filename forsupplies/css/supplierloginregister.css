@@ -400,6 +400,7 @@ src: url('MyriadPro-Regular.otf');
 .register_selectproduct_tab input{margin-right:5px;}
 .register_selectproduct_tab{border:1px solid #dddddd;background-color:#dddddd;}
 .select_pc_single{border-top:1px solid transparent;}
+.uploadimgshow_out img{max-width:100px;}
 
 
 
