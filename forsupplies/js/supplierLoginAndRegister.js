@@ -50,31 +50,54 @@ function showPreview(source,showid) {
         	var imgobj = new Image();
         	imgobj.src = e.target.result; 
         	
-        	//alert(imgobj.src);
+		    if($(source).attr("data-uploadimages")=="true"){
+			   
+			   if($(source).val().indexOf("png") > 0|| $(source).val().indexOf("jpg") > 0) {
+			   		$("#"+showid+"_show").empty().append(imgobj);
+			   		
+			   		if($(source).attr("data-hasupload")!="1"){
+				   		var cindex = $(source).parents(".single_upload_out").children().length+1;
+				   	
+					   	var sin_up = '<div class="single_upload"><div class="uploadimg_div uploadimg_div2">\
+													<span>上传</span>\
+													<input class="uploadimg_btn"  id="'+showid+cindex+'" type="file" value="上传" data-uploadimages="true" onchange="showPreview(this,\''+showid+cindex+'\')"  >\
+												</div>\
+												<div class="uploadimgshow_out" id="'+showid+cindex+'_show"></div></div>';
+					   	
+					   	$(source).parents(".single_upload_out").append(sin_up);
+					   	$(source).attr("data-hasupload","1");
+				   		
+			   		}
+			   	
+			   }else{
+			   		$("#"+showid+"_show").empty().append('<img src="images/yasuo_code.jpg">');
+			   		
+			   		if($(source).attr("data-hasupload")!="1"){
+				   		var cindex = $(source).parents(".single_upload_out").children().length+1;
+				   	
+					   	var sin_up = '<div class="single_upload"><div class="uploadimg_div uploadimg_div2">\
+													<span>上传</span>\
+													<input class="uploadimg_btn"  id="upload_environment_whole"'+cindex+' type="file" value="上传" data-uploadimages="true" onchange="showPreview(this,\'upload_environment_whole'+cindex+'\')"  >\
+												</div>\
+												<div class="uploadimgshow_out" id="upload_environment_whole'+cindex+'_show"></div></div>';
+					   	
+					   	$(source).parents(".single_upload_out").append(sin_up);
+					   	$(source).attr("data-hasupload","1");
+				   		
+			   		}
+			   	
+			   }
+			   
+		    }else{
+		   	
+		   		if($(source).val().indexOf("png") > 0|| $(source).val().indexOf("jpg") > 0) {
+		   			$("#"+showid+"_show").empty().append(imgobj);
+		   		}else{
+		   			$("#"+showid+"_show").empty().append('<img src="images/yasuo_code.jpg">'); 
+		   		}
+
+			}
         	
-        	
-        	
-        	if($(source).val().indexOf("png") > 0|| $(source).val().indexOf("jpg") > 0)   
-				{   
-				     alert($(source).attr("data-uploadimages"));
-				   //$("#"+showid).empty().append('<img src="'+$(source).val()+'">'); 
-				    if($(source).attr("data-uploadimages")=="true"){
-				    	
-				    	$("#"+showid).append(imgobj); 
-				    }else{
-				    	$("#"+showid).empty().append(imgobj);  
-				    }
-				}else{
-					if($(source).attr("data-uploadimages")=="true"){
-				    	$("#"+showid).append('<img src="images/yasuo_code.jpg">');
-				    }else{
-				    	$("#"+showid).empty().append('<img src="images/yasuo_code.jpg">'); 
-				    }
-				}
-        	
-        	
-        	
-            
         }; 
 
         fr.readAsDataURL(file);  
@@ -155,7 +178,7 @@ $(function(){
 		return false;
 	}
 	
-	var appendstr = '<tr class="ui_upload_after_append"><td class="bg_white"><input id="overseas_contract'+uploadcont+'" type="text" placeholder="请输入合同名称"></td><td><input id="overseas_contract'+uploadcont+'_info" type="text"></td><td class="bg_white ta_l"><div class="uploadimg_div uploadimg_div2"><span>上传</span><input class="uploadimg_btn"  id="upload_overseas_contract'+uploadcont+'" type="file" value="上传扫描件" onchange="showPreview(this,\'upload_overseas_contract'+uploadcont+'_show\')"  ></div><div class="uploadimgshow_out" id="upload_overseas_contract'+uploadcont+'_show"></div></td></tr>';
+	var appendstr = '<tr class="ui_upload_after_append"><td class="bg_white"><input id="overseas_contract'+uploadcont+'" type="text" placeholder="请输入合同名称"></td><td><input id="overseas_contract'+uploadcont+'_info" type="text"></td><td class="bg_white ta_l"><div class="uploadimg_div uploadimg_div2"><span>上传</span><input class="uploadimg_btn"  id="upload_overseas_contract'+uploadcont+'" type="file" value="上传扫描件" onchange="showPreview(this,\'upload_overseas_contract'+uploadcont+'\')"  ></div><div class="uploadimgshow_out" id="upload_overseas_contract'+uploadcont+'_show"></div></td></tr>';
 	
 	$(".ui_upload_after_append").removeClass("ui_upload_after_append").after(appendstr);
 	
@@ -165,12 +188,13 @@ $(function(){
 	
 	
 	//添加更多发货地址
-	var addresscont = 2;
+	var addresscont = 6;
 	$("#address_more_btn1").on("click",function(){
 	
 	if(addresscont>10){
 		return false;
 	}
+	
 	
 	$(".address_"+addresscont).removeClass("c_hidden");
 	
@@ -182,12 +206,19 @@ $(function(){
 	
 	//相关认证勾选
 	$('input[name="supplier_certification"]').click(function(){
-//		alert($(this).prop("checked"));
 		if($(this).prop("checked")){
 			$(this).parents(".ui_checkbox_out1").siblings(".ui_upload_or_no").removeClass("no_upload_css").find(".ui_uploadimg_btn").attr("disabled",false);
 		}else{
 			$(this).parents(".ui_checkbox_out1").siblings(".ui_upload_or_no").addClass("no_upload_css").find(".ui_uploadimg_btn").attr("disabled",true);
-			$(this).parents(".ui_checkbox_out1").siblings(".ui_upload_or_no").find(".ui_uploadimgshow_out").empty();
+			$(this).parents(".ui_checkbox_out1").siblings(".ui_upload_or_no").children(".single_upload_out").children(".single_upload").each(function(){
+				//alert($(this).index());
+				if($(this).index()==0){
+					$(this).find(".ui_uploadimgshow_out").empty();
+					$(this).find(".ui_uploadimg_btn").removeAttr("data-hasupload");
+				}else{
+					$(this).remove();
+				}
+			});
 		}
 		
 	});
@@ -206,6 +237,53 @@ $(function(){
 		}else{
 			$(this).parent().css("color","#000000");
 		}
+	});
+	
+	//生产能力调查增加
+	$("#throughput_morebtn").click(function(){
+		var rowindex = $(this).parents("tbody").siblings(".throughput_addout").children().length;
+		rowindex = rowindex+1;
+		var addstr = '\
+						<tr>\
+							<td class="bg_white">'+rowindex+'</td>\
+							<td><input type="text"></td>\
+							<td class="bg_white"><input type="text"></td>\
+							<td><input type="text"></td>\
+							<td class="bg_white"><input type="text"></td>\
+							<td><input type="text"></td>\
+							<td class="bg_white"><input type="text"></td>\
+							<td><input type="text"></td>\
+							<td class="bg_white"><input type="text"></td>\
+							<td><input type="text"></td>\
+							<td class="bg_white"><input type="text"></td>\
+						</tr>\
+					';
+		$(this).parents("tbody").siblings(".throughput_addout").append(addstr);
+	});
+	
+	//产品欧标检测报告增加
+	$("#eur_standard_morebtn").click(function(){
+		var rowindex = $(this).parents("tbody").siblings(".eur_standard_out").children().length;
+		alert(rowindex);
+		rowindex=rowindex+1;
+		var addstr = '\
+					<tr>\
+						<td class="bg_white"><input type="text"></td>\
+						<td><input type="text"></td>\
+						<td colspan="2" class="bg_white ta_l">\
+							<div class="single_upload_out">\
+								<div class="single_upload">\
+									<div class="uploadimg_div uploadimg_div2">\
+										<span>上传</span>\
+										<input class="uploadimg_btn"  id="upload_eur_row'+rowindex+'_standard" type="file" value="上传" data-uploadimages="true" onchange="showPreview(this,\'upload_eur_row'+rowindex+'_standard\')"  >\
+									</div>\
+									<div class="uploadimgshow_out" id="upload_eur_row'+rowindex+'_standard_show"></div>\
+								</div>\
+							</div>\
+						</td>\
+					</tr>\
+					';
+		$(this).parents("tbody").siblings(".eur_standard_out").append(addstr);
 	});
 	
 	//为空和最小长度验证
