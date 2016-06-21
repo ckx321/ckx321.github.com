@@ -33,7 +33,10 @@
 			
 			<div class="supplier_main">
 				<div class="supplier_register3 supplier_register4">
+					
 					<h2>选择供货产品分类</h2>
+					
+					<div id="ui_select_products">
 					
 					<div class="select_pc_single">
 						<h3 class="ui_selectpc_h3">
@@ -559,7 +562,7 @@
 						</div>
 					</div>
 					
-					
+				</div>	
 					
 					<div class="register_btn_div">
 							<p class="registerbtn_out">
@@ -590,6 +593,34 @@
 		
 		
 		
+		<script>
+			$(function(){
+				var ckxtest = '<div class="select_pc_single">\
+						<h3 class="ui_selectpc_h3">\
+							<span class="point_r"></span>\
+							<span class="h3_in">仪器仪表</span>\
+						</h3>\
+						<div class="ui_selectpc_showdown c_hidden">\
+							<table class="register_selectproduct_tab">\
+								<tr>\
+									<td>\
+										<label><input type="checkbox" value="" name="">仪器仪表</label>\
+									</td>\
+									<td>\
+									</td>\
+									<td>\
+									</td>\
+									<td>\
+									</td>\
+								</tr>\
+							</table>\
+						</div>\
+					</div>';
+					
+					$("#ui_select_products").append(ckxtest);
+					
+			})
+		</script>
 
 	</body>
 </html>

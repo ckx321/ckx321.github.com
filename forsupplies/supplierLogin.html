@@ -10,9 +10,11 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/header_footer.css" />
 		<link rel="stylesheet" type="text/css" href="css/supplierloginregister.css" />
+		<link rel="stylesheet" href="css/idcode.css">
 		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 		<!--<script type="text/javascript" src="js/angular.1.2.5.amend.min.js"></script>-->
 		<script type="text/javascript" src="js/supplierLoginAndRegister.js"></script>
+		<script src="js/idcode.js"></script>
 		
 	</head>
 	<body ng-app="">
@@ -46,8 +48,12 @@
 							
 							<p>
 								<label>验证码</label>
-								<input class="login_ip login_code" id="login_imgcode" type="text" data-noempty="true">
-								<a class="login_imgcode_out" href="#"><img src="1.png" alt="1234"></a>
+								<span class="idcode_out" id="idcode_out_login">
+									<span class="idcode1" id="idcode"></span>
+								</span>
+								
+								<!--<input class="login_ip login_code" id="login_imgcode" type="text" data-noempty="true">
+								<a class="login_imgcode_out" href="#"><img src="1.png" alt="1234"></a>-->
 							</p>
 							<p class="loginbtn_out">
 								<input class="login_btn" id="login_btn" type="button" value="登录">
@@ -80,9 +86,9 @@
 		</div>
 		
 		<script>
-			$(function(){
-				
-			});
+		$(document).ready(function(){
+		 $.idcode.setCode();
+		});
 		</script>
 		
 		

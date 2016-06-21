@@ -14,36 +14,37 @@ function isNullOrEmpty(str){
 //为空时提醒错误
 function noEmpty(obj){
 	var thisval = obj.val();
-		if(thisval==null||thisval==""||$.trim(thisval)==""){
-			obj.siblings("[data-error='true']").remove();
-			obj.after("<span data-error='true' style='color:red;position:absolute;margin-top:14px;margin-left:5px;' >*</span>");
-			return false;
-		}else{
-			obj.siblings("[data-error='true']").remove();
-			return true;
-		}
+	if(thisval==null||thisval==""||$.trim(thisval)==""){
+		obj.siblings("[data-error='true']").remove();
+		obj.after("<span data-error='true' style='color:red;position:absolute;margin-top:14px;margin-left:5px;' >*</span>");
+		return false;
+	}else{
+		obj.siblings("[data-error='true']").remove();
+		return true;
+	}
 }
 
 //最小长度设定
 function minLength(obj){
 	var thisval = obj.val().length;
 	var thislimit= obj.attr("minlength");
-		if(thisval<thislimit){
-			obj.siblings("[data-error='true']").remove();
-			obj.after("<span data-error='true' style='color:red;position:absolute;margin-top:14px;margin-left:5px;' >*不能小于"+thislimit+"位</span>");
-			return false;
-		}else{
-			obj.siblings("[data-error='true']").remove();
-			return true;
-		}
+	if(thisval<thislimit){
+		obj.siblings("[data-error='true']").remove();
+		obj.after("<span data-error='true' style='color:red;position:absolute;margin-top:14px;margin-left:5px;' >*不能小于"+thislimit+"位</span>");
+		return false;
+	}else{
+		obj.siblings("[data-error='true']").remove();
+		return true;
+	}
 }
 
 
 //上传图片展示
 function showPreview(source,showid) {
 	$(source).attr("data-uploadcode","1");
-    var file = source.files[0];  
+//  var file = source.files[0];  
     if(window.FileReader) {  
+    	var file = source.files[0];
         var fr = new FileReader();  
         fr.onloadend = function(e) {  
         	var imgobj = new Image();
@@ -51,23 +52,37 @@ function showPreview(source,showid) {
         	
         	//alert(imgobj.src);
         	
-        	if(imgobj.src.indexOf("png") > 0|| imgobj.src.indexOf("jpg") > 0)   
+        	
+        	
+        	if($(source).val().indexOf("png") > 0|| $(source).val().indexOf("jpg") > 0)   
 				{   
-				    $("#"+showid).empty().append(imgobj);   
+				     alert($(source).attr("data-uploadimages"));
+				   //$("#"+showid).empty().append('<img src="'+$(source).val()+'">'); 
+				    if($(source).attr("data-uploadimages")=="true"){
+				    	
+				    	$("#"+showid).append(imgobj); 
+				    }else{
+				    	$("#"+showid).empty().append(imgobj);  
+				    }
 				}else{
-					$("#"+showid).empty().append('<img src="images/yasuo_code.jpg">'); 
+					if($(source).attr("data-uploadimages")=="true"){
+				    	$("#"+showid).append('<img src="images/yasuo_code.jpg">');
+				    }else{
+				    	$("#"+showid).empty().append('<img src="images/yasuo_code.jpg">'); 
+				    }
 				}
         	
         	
         	
             
         }; 
-//      alert(file);
+
         fr.readAsDataURL(file);  
     }else{
     	$(".uploadimg_div span").remove();
-    	$(".uploadimg_div input").css({"margin-left":"0","opacity":"1","filter":"alpha(opacity=100)"});
+    	$(".uploadimg_div input").css({"margin-left":"0","opacity":"1","filter":"alpha(opacity=100)","margin-top":"0","width":"180px"});
     }
+
 }
 
 //判断是否已经上传图片
@@ -106,12 +121,27 @@ function getPagecontSize(htorwd){
 	}
 }
 
+//邮箱格式验证
+function isemail(obj){
+    //alert($(obj).val());
+    var email_val = $.trim($(obj).val());
+    var emailreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+    if(!emailreg.test(email_val)&&email_val!="")
+      {
+          //alert('邮箱格式错误');
+          $(obj).after("<span data-nolike='true' style='color:red;position:absolute;margin-top:10px;margin-left:5px;' >*邮箱格式错误</span>");
+          return false;
+    }else{
+    	return true;
+    }
+}
+
 
 $(function(){
 	
-//	alert(getBrowserSize("height"));
-//	alert(getPagecontSize("height"));
+
 	
+	//控制页面底部的属性
 	if(getBrowserSize("height")>getPagecontSize("height")){
 		$("#page_footer").css({"position":"fixed","bottom":"0px","width":"100%"});
 	}
@@ -164,14 +194,13 @@ $(function(){
 	
 	
 	//选择产品分类点击显示隐藏
-	$(".ui_selectpc_h3").on("click",function(){
+	$("#ui_select_products").on("click",".ui_selectpc_h3",function(){
 		$(this).siblings(".ui_selectpc_showdown").slideToggle();
 		$(this).find(".point_r").toggleClass("point_d");
 	});
 	
 	//选择产品分类选中状态改变
-	$(".select_pc_single input[type='checkbox']").on("change",function(){
-//		alert($(this).prop("checked"));
+	$("#ui_select_products").on("change","input[type='checkbox']",function(){
 		if($(this).prop("checked")){
 			$(this).parent().css("color","red");
 		}else{
@@ -187,6 +216,22 @@ $(function(){
 			}
 		};
 	});	
+	
+	//验证码获得焦点，清除错误提示
+	$("#idcode").on("focus","#ehong-code-input",function(){
+		
+		$(this).parents("#idcode").siblings("span[data-nolike='true']").remove();
+	});
+	
+	
+	//邮箱格式验证	
+	$("#reg_email").on("blur",function(){
+		isemail(this);
+	});
+	
+	$("#reg_email").on("focus",function(){
+		$(this).siblings("[data-nolike='true']").remove();
+	});
 	
 	//登录
 	$("#login_btn").on("click",function(){
@@ -204,9 +249,6 @@ $(function(){
 		if(iserror){
 			return false;
 		};
-		
-		
-		
 		
 		var username=$.trim($("#login_username").val());
 		var password=$.trim($("#login_password").val());
@@ -262,16 +304,33 @@ $("#reg_password2,#reg_password").focus(function(){
 		var password1 = $.trim($("#reg_password").val());
 		var password2 = $.trim($("#reg_password2").val());
 		if(password1!=password2){
-			alert("两次密码输入不一致");
+			//alert("两次密码输入不一致");
 			$("#reg_password2,#reg_password").after("<span data-nolike='true' style='color:red;position:absolute;margin-top:14px;margin-left:5px;' >*密码不一致</span>");
 			return false;
-		}
+		};
+		
+		
+		if(!isemail(document.getElementById("reg_email"))){
+			return false;
+		};
+		
+		var imgcode_in = $.trim($("#idcode_out_reg #ehong-code-input").val()).toLowerCase();
+		var imgcode_true = $.trim($("#idcode_out_reg #ehong-code font:nth-child(1)").html()).toLowerCase()+$.trim($("#idcode_out_reg #ehong-code font:nth-child(2)").html()).toLowerCase()+$.trim($("#idcode_out_reg #ehong-code font:nth-child(3)").html()).toLowerCase()+$.trim($("#idcode_out_reg #ehong-code font:nth-child(4)").html()).toLowerCase();
+		//alert(imgcode_in);
+		//alert(imgcode_true);
+		if(imgcode_in!=imgcode_true){ 
+			//alert("验证码错误");
+			$("#idcode").after("<span data-nolike='true' style='color:red;position:absolute;margin-top:8px;margin-left:5px;' >*验证码错误</span>");
+			return false; 
+		};
+		
+		
 		
 		var username=$.trim($("#reg_username").val());
 		var password=$.trim($("#reg_password").val());
 		var imgcode=$.trim($("#reg_imgcode").val());
 		var email=$.trim($("#reg_email").val());
-		alert("账号："+username+"。密码："+password+"。验证码："+imgcode+"。邮箱："+email);
+		//alert("账号："+username+"。密码："+password+"。验证码："+imgcode+"。邮箱："+email);
 
 		$.ajax({
 			 type: "POST",
@@ -286,8 +345,8 @@ $("#reg_password2,#reg_password").focus(function(){
              	alert("（真）注册成功");
              },
              error:	function(data){
-             	alert("（伪）注册成功");
-             	window.location.href="supplierRegisterStepfristResult.html";
+             	//alert("（伪）注册成功");
+             	window.location.href="supplierRegisterStepsecond.html";
              }
 		});
 		
@@ -321,7 +380,6 @@ $("#reg_password2,#reg_password").focus(function(){
 		var username=$.trim($("#reg_username").val());
 		
 		
-		//alert("账号："+username+"。密码："+password+"。验证码："+imgcode+"。邮箱："+email);
 
 		$.ajax({
 			 type: "POST",
@@ -344,7 +402,6 @@ $("#reg_password2,#reg_password").focus(function(){
 		
 		
 	});
-	
 	
 	
 });

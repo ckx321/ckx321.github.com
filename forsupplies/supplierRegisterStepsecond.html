@@ -14,6 +14,7 @@
 		<!--<script type="text/javascript" src="js/angular.min.js"></script>-->
 		<script type="text/javascript" src="js/supplierLoginAndRegister.js"></script>
 		<script type="text/javascript" src="js/jquery.cityselect.js"></script>
+		<script type="text/javascript" src="jedate/jedate.min.js"></script>
 		
 		
 		<script type="text/javascript">
@@ -99,6 +100,9 @@
 			});
 
 		</script>
+		
+		
+		
 
 
 
@@ -196,7 +200,7 @@
 									<td>法人代表</td>
 									<td><input type="text" data-noempty="true"></td>
 									<td>企业成立日期</td>
-									<td><input class="build_date" type="date"></td>
+									<td class="data_ip_out"><input class="build_date datecode" id="company_builddate" type="text" placeholder="选择时间"></td>
 								</tr>
 								<tr>
 									<td>注册资本</td>
@@ -207,7 +211,7 @@
 								<tr>
 									<td class="minht">营业期限</td>
 									<td class="data_ip_out" colspan="3">
-										<input type="date"> 至 <input type="date">
+										<input class="datecode" id="business_term_start1" type="text"> 至 <input class="datecode" id="business_term_end1" type="text">
 									</td>
 								</tr>
 								<tr>
@@ -221,6 +225,10 @@
 										 <div class="uploadimgshow_out" id="upload_businesslicense_show"></div>
 										
 									</td>
+								</tr>
+								<tr>
+									<td>企业网站链接</td>
+									<td colspan="3"><input type="text"></td>
 								</tr>
 								<tr>
 									<td>备注</td>
@@ -940,6 +948,39 @@
 						</div>
 						
 						
+						<!--企业生产环境资料-->
+						<div class="supplier_reg_single">
+							<h3>
+								<strong>企业生产环境资料</strong>
+							</h3>
+							<table class="supplier_reg_tab4col supplier_reg_tab4col6">
+								<tr>
+									<th class="wb10"></th>
+									<th class="wb20"></th>
+									<th class="wb70"></th>
+								</tr>
+								<tr>
+									<td>序号</td>
+									<td class="bg_blue minht ta_c">图片内容</td>
+									<td class="ta_c">上传图片(可上传多张)</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td class="bg_blue ta_c">生产基地鸟瞰图</td>
+									<td class="bg_white ta_l">
+										<div class="uploadimg_div uploadimg_div2">
+											<span>上传</span>
+											<input class="uploadimg_btn"  id="upload_environment_whole" type="file" value="上传" data-uploadimages="true" onchange="showPreview(this,'upload_environment_whole_show')"  >
+										</div>
+										 <div class="uploadimgshow_out" id="upload_environment_whole_show"></div>
+									</td>
+								</tr>
+								
+								
+							</table>
+						</div>
+						
+						
 						
 						
 						
@@ -975,6 +1016,36 @@
 		</div>
 		
 		
+		
+		<script type="text/javascript">
+		//日期插件定义
+			jeDate({
+				dateCell:"#company_builddate",//isinitVal:true,
+				format:"YYYY-MM-DD",
+				isTime:false, //isClear:false,
+				minDate:"1900-1-1",
+				maxDate:"2099-12-31"
+			});
+			
+			jeDate({
+				dateCell:"#business_term_start1",//isinitVal:true,
+				format:"YYYY-MM-DD",
+				isTime:false, //isClear:false,
+				minDate:"1900-1-1",
+				maxDate:"2099-12-31"
+			});
+			
+			jeDate({
+				dateCell:"#business_term_end1",//isinitVal:true,
+				format:"YYYY-MM-DD",
+				isTime:false, //isClear:false,
+				minDate:"1900-1-1",
+				maxDate:"2099-12-31"
+			});
+			
+			
+			
+		</script>
 		
 
 	</body>

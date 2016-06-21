@@ -78,7 +78,8 @@ src: url('MyriadPro-Regular.otf');
 	padding-right:5%;
 }
 .supplier_login input.login_ip,
-.supplier_register input.register_ip{
+.supplier_register input.register_ip,
+.supplier_main #ehong-code-input{
 	display: inline-block;
 	width:50%;
 	border:none;
@@ -205,6 +206,9 @@ src: url('MyriadPro-Regular.otf');
 	text-align: right;
 	background-color: #38a8e8;
 }
+.supplier_reg_tab4col tr td:first-child{
+	background-color: #38a8e8;
+}
 /*.supplier_reg_tab4col2 tr td{
 	width:26.66%;
 }
@@ -288,9 +292,11 @@ src: url('MyriadPro-Regular.otf');
 }
 
 .uploadimg_div{
+	position: relative;
 	display: inline-block;
 	padding-top:15px;
 	padding-bottom:15px;
+	min-height: 30px;
 }
 .uploadimg_div input{
 	display: block;
@@ -299,7 +305,8 @@ src: url('MyriadPro-Regular.otf');
 	z-index: 2;
 	width:180px;
 	margin-left:-10px;
-	margin-top: -42px;
+	/*margin-top: -42px;*/
+	top:15px;
 	opacity: 0.01;
 	filter: alpha(opacity=1);
 	cursor: pointer;
@@ -401,6 +408,20 @@ src: url('MyriadPro-Regular.otf');
 .register_selectproduct_tab{border:1px solid #dddddd;background-color:#dddddd;}
 .select_pc_single{border-top:1px solid transparent;}
 .uploadimgshow_out img{max-width:100px;}
+.datecode{background:url(../jedate/images/datecode.png) no-repeat right center; cursor: pointer;}
+
+.idcode1{display: inline-block;}
+.idcode1 span:first-child{display: inline-block;vertical-align: middle;}
+.idcode1 span #ehong-code-input{width:100px;}
+.idcode1>div{display: inline-block;vertical-align: middle;}
+.idcode1>div font{font-size:24px;}
+.idcode_out{display: inline-block;}
+
+.supplier_reg_tab4col6 tr td:first-child{text-align:center;}
+.supplier_reg_tab4col6 tr th.wb10{width:10%;}
+.supplier_reg_tab4col6 tr th.wb20{width:20%;}
+.supplier_reg_tab4col6 tr th.wb70{width:70%;}
+.supplier_reg_tab4col6 tr td{width: auto;}
 
 
 
