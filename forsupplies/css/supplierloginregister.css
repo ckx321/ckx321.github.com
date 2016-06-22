@@ -446,6 +446,9 @@ src: url('MyriadPro-Regular.otf');
 .supplier_reg_tab4col9{min-width:1500px;}
 .supplier_reg_tab4col9 tr td:first-child{background-color:#38a8e8;text-align:center;}
 .supplier_morebtn_out2 .more_btn{float: left;margin-left:100px;}
+.agreerole_out{text-align: center;margin-top:40px;}
+.agreerole_out a{color:blue;}
+.agreerole_out a:hover{text-decoration: underline;}
 
 
 
