@@ -1,0 +1,9 @@
+html,body,div,ul,ol,dl,li,h1,h2,h3,h4,h5,h6,img,table,tr,td,a,p{
+	margin: 0;
+	padding: 0;
+	font-family: "Myriad Pro", Roboto,Helvetica, Tahoma, Arial, "Microsoft Yahei";
+	}
+a{ color:black; text-decoration: none;}
+li{ list-style:none;}
+.clear{clear:both;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
