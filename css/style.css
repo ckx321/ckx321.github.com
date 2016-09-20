@@ -155,12 +155,22 @@ blockquote strong {
 	margin-top: 10px;
 }
 .site-logo a.brand {
-	color: #111;
+	/*color: #111;
 	text-transform: uppercase;
 	font-size: 32px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 900;
-	margin-top: 20px;
+	margin-top: 20px;*/
+	display: block;
+	height: 80px;
+	width:80px;
+	overflow: hidden;
+	border-radius: 100%;
+	margin-top:-25px;
+	margin-bottom: -15px;
+}
+.site-logo a.brand img{
+    height: 100%;
 }
 
 
@@ -1005,7 +1015,7 @@ a.btn:focus{
 
 	}
 	.navbar-header {
-		margin-top:-40px;
+		margin-top:-60px;
 		padding:0;
 	}
 	.navbar-header button {
@@ -1036,6 +1046,9 @@ a.btn:focus{
 	
 	.xs-marginbot-20 {
 		margin-bottom: 20px;
+	}
+	.site-logo a.brand{
+	    margin-top:-15px;
 	}
 
 }
