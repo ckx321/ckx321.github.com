@@ -1009,7 +1009,7 @@ a.btn:focus{
 	}
 	.navbar-custom ul.nav li a {
 		color: #eee;
-		background-color: #444444;
+		/*background-color: #444444;*/
 	}
 	.navbar-custom ul.nav ul.dropdown-menu li {
 		border-bottom: 1px solid #aaa;
@@ -1056,12 +1056,14 @@ a.btn:focus{
 
 @media (max-width:480px) {
 
-	.navbar-custom .nav.navbar-nav {
+	/*.navbar-custom .nav.navbar-nav {
     background-color: rgba(255,255,255,.4);
-	}
+	}*/
 	
 	.navbar.navbar-custom.navbar-fixed-top {
 		margin-bottom: 30px;
 	}
 }
 #navigation{position: relative;}
+
+

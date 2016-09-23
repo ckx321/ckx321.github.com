@@ -1,0 +1,89 @@
+
+
+.mymain{
+    width:1200px;
+    margin: 100px auto;
+    padding:50px;
+    border: 1px solid #CCCCCC;
+}
+.mymain>h1{
+    margin: 0 auto 50px;
+    padding: 20px 30px;
+    background-color: #333333;
+    color:#ffffff;
+    height: 40px;
+    line-height: 40px;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.canvas_out{
+    padding:20px;
+    margin: 20px auto;
+    border:1px solid #cccccc;
+    background-color: #CCCCCC;
+}
+.canvas_out>h3{
+    width: 300px;
+    margin:0 0 40px;
+    padding: 10px 30px;
+    background-color: #333333;
+    color:#ffffff;
+    height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    font-weight: normal;
+}
+/*--------------------------------------*/
+/*canvas*/
+
+.rotate_true
+{
+position:relative;
+animation:rotate1 4s linear infinite normal;
+/* Firefox: */
+-moz-animation:rotate1 4s linear infinite normal;
+/* Safari and Chrome: */
+-webkit-animation:rotate1 4s linear infinite normal;
+/* Opera: */
+-o-animation:rotate1 4s linear infinite normal;
+}
+
+@keyframes rotate1
+{
+0%   {transform: rotate(0deg);}
+100% {transform: rotate(360deg);}
+}
+
+@-moz-keyframes rotate1 /* Firefox */
+{
+0%   {transform: rotate(0deg);}
+100% {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes rotate1 /* Safari and Chrome */
+{
+0%   {transform: rotate(0deg);}
+100% {transform: rotate(360deg);}
+}
+
+@-o-keyframes rotate1 /* Opera */
+{
+0%   {transform: rotate(0deg);}
+100% {transform: rotate(360deg);}
+}
+
+
+.cvs_rubber_out{
+    width:320px;
+    height: 400px;
+    background: url(../images/001.jpg) center top no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+
+
+
+
+/*--------------------------------------*/
