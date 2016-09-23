@@ -1065,5 +1065,9 @@ a.btn:focus{
 	}
 }
 #navigation{position: relative;}
+.my_demo li{
+    text-align: left;
+    text-decoration: underline;
+}
 
 

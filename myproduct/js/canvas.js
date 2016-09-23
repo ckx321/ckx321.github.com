@@ -257,24 +257,24 @@ context.translate(200,200); //重新映射0 0 位置
 var deg=2*Math.PI/12;    
 //////////////////////////////////////////////////表盘
 context.save();    
-//context.beginPath();  
-//
-////多边形表盘
-////for(var i=0;i<13;i++){
-////var x=Math.sin(i*deg);
-////var y=-Math.cos(i*deg);
-////context.lineTo(x*150,y*150);    
-////}
-//
-////圆形表盘
-//context.arc(0,0,150,0,2*Math.PI,true);
-//
-//var c=context.createRadialGradient(0,0,0,0,0,130); //圆形渐变色
-//c.addColorStop(0,"#eeeeee");
-//c.addColorStop(1,"#999999")
-//context.fillStyle=c;
-//context.fill();
-//context.closePath();    
+context.beginPath();  
+
+//多边形表盘
+//for(var i=0;i<13;i++){
+//var x=Math.sin(i*deg);
+//var y=-Math.cos(i*deg);
+//context.lineTo(x*150,y*150);    
+//}
+
+//圆形表盘
+context.arc(0,0,150,0,2*Math.PI,true);
+
+var c=context.createRadialGradient(0,0,0,0,0,130); //圆形渐变色
+c.addColorStop(0,"#eeeeee");
+c.addColorStop(1,"#999999")
+context.fillStyle=c;
+context.fill();
+context.closePath();    
 context.restore();    
 //////////////////////////////////////////////////数字
 context.save();
