@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+.clearb:after{
+    content: ' ';
+    height: 0;
+    display: block;
+    clear: both;
+}
+.clearb:before{
+    content: ' ';
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+a{transition: all 0.2s;}
+a:hover{color:deepskyblue!important; text-shadow:0 0 1px lightblue;}
+a:active{color: blue!important;}
+
+
+.wrap{
+    width:1200px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    color: #333333;
+}
+
+/*heaer*/
+.header{
+    background-color: #EEEEEE;
+    color: #ffffff;
+    /*overflow: hidden;*/
+}
+.header .logo{
+    display: block;
+    height: 80px;
+}
+.header .logo_out{
+    float: left;
+    padding-left: 20px;
+}
+.header .info{
+    float: right;
+    padding-top: 25px;
+    padding-right: 100px;
+    
+}
+.header .info a{
+    color:deepskyblue;
+}
+
+
+/*footer*/
+.footer{
+    min-height: 100px;
+    background-color:#eeeeee;
+}
+
+/*main*/
+.c_navbar{
+/*height: 60px;*/
+background-color:lightblue;    
+}
+.c_navbar li{
+    float: left;
+}
+.c_navbar li a{
+    display: block;
+    padding:20px 50px;
+    line-height: 20px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+.c_navbar li a:hover{
+    background-color:#dddddd;
+}
+

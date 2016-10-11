@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>localStorage</title>
+	</head>
+	<body>
+	    
+	    
+	    <h2>localstorage:</h2>
+	    <div id="localstorage">
+	    	
+	    </div>
+	    
+	    <h2>sessionstorage</h2>
+	    <div id="sessionstorage">
+	    	
+	    </div>
+	    
+	    <script type="text/javascript">
+	    	
+	    	//计算访问次数：此电脑上此浏览器累计访问次数
+	    	if(localStorage.vistecount){
+	    	    localStorage.vistecount = Number(localStorage.vistecount)+1;
+	    	}else{
+	    	    localStorage.vistecount = 1;
+	    	}
+
+	    	document.getElementById("localstorage").innerHTML = "此电脑访问次数为："+localStorage.vistecount+"次";
+	    	
+	    </script>
+	    
+	    <script type="text/javascript">
+	       //sessionStorage 为 本次浏览本页面次数， 刷新一次多加一次次数
+	    	if(sessionStorage.thisvisitecount){
+	    	    sessionStorage.thisvisitecount = Number(sessionStorage.thisvisitecount)+1;
+	    	}else{
+	    	    sessionStorage.thisvisitecount = 1;
+	    	}
+	    	document.getElementById("sessionstorage").innerHTML = "本次登录浏览界面次数为："+sessionStorage.thisvisitecount+"次";
+	    </script>
+	    
+	    
+	</body>
+</html>

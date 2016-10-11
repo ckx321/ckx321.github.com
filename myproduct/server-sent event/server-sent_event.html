@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>server-sent_event</title>
+	</head>
+	<body>
+	    
+	    <div class="sent_out">
+	    	<h1 class="sent_h2">server-sent event</h1>
+	    	<div class="sent_d1">
+	    		<div class="sent_d2" id="sent_dd">
+	    			
+	    		</div>
+	    	</div>
+	    </div>
+	    
+	</body>
+	
+	<script type="text/javascript">
+		var source=new EventSource("server-sent_event.php");
+        source.onmessage=function(event)
+          {
+          document.getElementById("sent_dd").innerHTML+=event.data + "<br />";
+          };
+	</script>
+	
+</html>

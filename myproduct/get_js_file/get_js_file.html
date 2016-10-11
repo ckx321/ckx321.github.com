@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动态加载js文件</title>
+		<script src="../../js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+	    
+	</head>
+	<body>  
+	    
+	    <script type="text/javascript">
+	    	var dom_head = $('head');
+	    	var spt_file = '<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script';
+	    	spt_file += '>';
+	    	dom_head.append(spt_file);
+	    </script>
+	    
+	</body>
+</html>
