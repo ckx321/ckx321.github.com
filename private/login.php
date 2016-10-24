@@ -59,7 +59,7 @@ if(isset($_POST["loginBtn"])&&$_POST["loginBtn"]=="登录"){
 	echo "<script>alert('信息不完整'); history.go(-1);</script>";
 	}else{
     
-		include("conn.php");
+		include("conn.php"); 
 
 		$sql="select * from user where user = '$account' and password='$password' limit 1";
 
