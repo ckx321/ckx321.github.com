@@ -49,7 +49,6 @@ var myHighlightSensitiveWords;
 	 **/
 	var getCurrentPageTxt = function(){
 		currentPageTxt = $('#viewer').find('[data-page-number='+ currentPageNum +']').find('.textLayer').text();
-		console.log(currentPageTxt);
 	}
 	
 	/**
@@ -61,7 +60,7 @@ var myHighlightSensitiveWords;
 				currentPageSensitiveWords.push(allSensitiveWords[i]);
 			}
 		}
-		console.log(currentPageSensitiveWords);
+//		console.log(currentPageSensitiveWords);
 	}
 	
 	/**
@@ -82,15 +81,6 @@ var myHighlightSensitiveWords;
 	
 	/**
 	 * 设置敏感词列表弹窗的dom片段
-	 * <ol class="sensitive-words-list">
-	        		<li class="sensitive-words-item">
-	        			<div class="sensitive-words-base">
-	        				<span class="word-wrap">敏感词：<span class="word">残废人</span></span>
-	        				<span class="order-wrap">敏感词级别：<span class="order">二级</span></span>
-	        			</div>
-	        			<div class="sensitive-words-info">编辑提示：建议使用“残疾人”。请确认是否仍然使用该词。</div>
-	        		</li>
-	        	</ol>
 	 **/
 	var setSensitiveWordsLayerDom = function(){
 		var htmlPart = '';
