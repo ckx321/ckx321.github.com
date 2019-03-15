@@ -11246,9 +11246,12 @@ var Toolbar = function () {
   _createClass(Toolbar, [{
     key: 'setPageNumber',
     value: function setPageNumber(pageNumber, pageLabel) {
+    	console.log(pageNumber);
       this.pageNumber = pageNumber;
       this.pageLabel = pageLabel;
       this._updateUIState(false);
+      // 新增高亮显示当前页所有的敏感词
+      myHighlightSensitiveWords(pageNumber);
     }
   }, {
     key: 'setPagesCount',

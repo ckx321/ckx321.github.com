@@ -7,11 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PDF阅读</title>
     <link rel="stylesheet" href="./plugin/pdfjs/web/viewer.css">
+    
+    <!--my css-->
+    <link rel="stylesheet" href="./css/pdf/index.css">
 
 	<!-- This snippet is used in production (included from viewer.html) -->
 	<link rel="resource" type="application/l10n" href="./plugin/pdfjs/web/locale/locale.properties">
+	<!--my js-->
+  <script src="./plugin/jquery.min.js"></script>
+  <script src="./plugin/jquery.highlight.js"></script>
+  <script src="./js/pdf/index.js"></script>
+  <!--pdfjs-->
 	<script src="./plugin/pdfjs/build/pdf.js"></script>
-    <script src="./plugin/pdfjs/web/viewer.js"></script>
+  <script src="./plugin/pdfjs/web/viewer.js"></script>
   </head>
 
   <body tabindex="1" class="loadingInProgress">
@@ -179,11 +187,12 @@
                 <span id="numPages" class="toolbarLabel"></span>
               </div>
               <div id="toolbarViewerRight">
+              	<button id="sensitive-word-btn" class="toolbarButton" style="width:60px;">敏感词</button>
                 <button id="presentationMode" class="toolbarButton presentationMode hiddenLargeView" title="Switch to Presentation Mode" tabindex="31" data-l10n-id="presentation_mode">
                   <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
                 </button>
 
-                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file">
+                <button id="openFile" class="toolbarButton openFile hiddenLargeView" title="Open File" tabindex="32" data-l10n-id="open_file"  style="display:none;">
                   <span data-l10n-id="open_file_label">Open</span>
                 </button>
 
@@ -194,7 +203,7 @@
                 <button id="download" class="toolbarButton download hiddenMediumView" title="Download" tabindex="34" data-l10n-id="download">
                   <span data-l10n-id="download_label">Download</span>
                 </button>
-                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark">
+                <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" tabindex="35" data-l10n-id="bookmark" style="display:none;">
                   <span data-l10n-id="bookmark_label">Current View</span>
                 </a>
 
@@ -275,6 +284,27 @@
           <div class="clearBoth"></div>
           <textarea id="errorMoreInfo" hidden='true' readonly="readonly"></textarea>
         </div>
+        
+        <!--敏感词列表弹窗开始-->
+        <div id="sensitive-words-layer" class="sensitive-words-wrap" style="display: none;">
+        	<h3 class="sensitive-words-title">当前第<span id="sensitive-words-pagenum"></span>页，本页包含敏感词：<span id="sensitive-words-close-btn" class="sensitive-words-close-btn">关闭</span></h3>
+        	<div class="sensitive-words-cont">
+	        	<div id="sensitive-words-layer-main" class="sensitive-words-main">
+	        		<ol class="sensitive-words-list">
+		        		<li class="sensitive-words-item">
+		        			<div class="sensitive-words-base">
+		        				<span class="word-wrap">敏感词：<span class="word">残废人</span></span>
+		        				<span class="order-wrap">敏感词级别：<span class="order">二级</span></span>
+		        			</div>
+		        			<div class="sensitive-words-info">编辑提示：建议使用“残疾人”。请确认是否仍然使用该词。</div>
+		        		</li>
+		        	</ol>
+		        	<div class="sensitive-words-empty">无</div>
+	        	</div>
+        	</div>
+        </div>
+        <!--敏感词列表弹窗结束-->
+        
       </div> <!-- mainContainer -->
 
       <div id="overlayContainer" class="hidden">
